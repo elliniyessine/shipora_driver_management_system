@@ -82,7 +82,7 @@ func routes(_ app: Application) throws {
 
     // POST /api/delivery-request/create
     // Creates a new delivery request with status "dispatched"
-    // curl -X POST http://localhost:8080/api/delivery-request/create -H "Content-Type: application/json" -d '{"deliveryId":"d202","orderId":"o203","status":"dispatched","pickupLocation":{"lat":36.8425,"lng":10.2430,"address":"Lac 1"},"dropoffLocation":{"lat":36.8533,"lng":10.2715,"address":"Lac 2"},"route":[{"lat":36.8425,"lng":10.2430,"address":null},{"lat":36.8460,"lng":10.2540,"address":null},{"lat":36.8533,"lng":10.2715,"address":null}]}'
+    // curl -X POST http://localhost:8080/api/delivery-request/create -H "Content-Type: application/json" -d '{"deliveryId":"d202","orderId":"o203","pickupLocation":{"lat":36.8425,"lng":10.2430,"address":"Lac 1"},"dropoffLocation":{"lat":36.8533,"lng":10.2715,"address":"Lac 2"},"route":[{"lat":36.8425,"lng":10.2430},{"lat":36.8460,"lng":10.2540},{"lat":36.8533,"lng":10.2715}]}'
     app.post("api", "delivery-request", "create") { req async throws -> Response in
         let createRequest = try req.content.decode(DeliveryRequest.self)
         

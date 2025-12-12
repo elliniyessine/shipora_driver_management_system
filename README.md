@@ -9,7 +9,7 @@ It is written in Swift, uses the Vapor framework and MongoDB.
 #### Example usage:
 ```bash
 # Create a new delivery request
-curl -X POST http://localhost:8080/api/delivery-request/create -H "Content-Type: application/json" -d '{"deliveryId":"d210","orderId":"o203","status":"dispatched","pickupLocation":{"lat":36.8425,"lng":10.2430,"address":"Lac 1"},"dropoffLocation":{"lat":36.8533,"lng":10.2715,"address":"Lac 2"},"route":[{"lat":36.8425,"lng":10.2430,"address":null},{"lat":36.8460,"lng":10.2540,"address":null},{"lat":36.8533,"lng":10.2715,"address":null}]}'
+curl -X POST http://localhost:8080/api/delivery-request/create -H "Content-Type: application/json" -d '{"deliveryId":"d210","orderId":"o203","pickupLocation":{"lat":36.8425,"lng":10.2430,"address":"Lac 1"},"dropoffLocation":{"lat":36.8533,"lng":10.2715,"address":"Lac 2"},"route":[{"lat":36.8425,"lng":10.2430},{"lat":36.8460,"lng":10.2540},{"lat":36.8533,"lng":10.2715}]}'
 
 # Check that the delivery request was created, and verify that its status is pending
 curl http://localhost:8080/api/delivery/d210
